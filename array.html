@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr=[1,2,3,4,5];
+        arr.push(6);
+        console.log(arr);
+        arr.unshift(0);
+        console.log(arr);
+        arr.pop();
+        console.log(arr);
+        arr.shift();
+        console.log(arr);
+        arr.splice(1,1);
+        console.log(arr);
+        arr.splice(0,1,100);
+        console.log(arr);
+        var str=arr.join("**");
+        console.log(str);
+
+        console.log(arr.slice(1,4));
+        var arr2=[20,30,40,50];
+        console.log(arr.concat(arr2));
+
+        console.log(arr.indexOf(100));
+
+        console.log(arr.lastIndexOf(1));
+
+
+        arr.sort(function(a,b){  
+            return a-b;
+        })
+        console.log(arr);
+        console.log(arr.sort((a,b)=>a-b));
+        console.log(arr.sort((a,b)=>b-a));
+
+        arr.forEach(function(value,index){
+            console.log(index,value)
+        })
+        arr.forEach((value,index)=>{console.log(index,value)})
+
+        var newArr =arr.filter(function(value,index){
+            return value>10;     
+        })
+        console.log(newArr);
+
+        var end = arr.map((value,index)=>value*2);
+        console.log(end);
+
+        var orr=arr.every(function(value,index){
+            return value<500;
+        });
+        console.log(orr);
+        console.log(arr.reverse());
+        console.log(arr);
+
+        var a={length:2,0:'aaa',1:'bbb'};  
+        Array.from(a); 
+
+        console.log(Array.of(1,2,3,4,5));
+        console.log(Array.of());
+
+        console.log(arr.includes(2));    
+        console.log(arr.includes(4));
+
+        console.log(arr.includes(100, 1));
+        console.log(arr.includes(100, 5));
+    </script>
+</body>
+</html>

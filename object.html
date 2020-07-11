@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj1={name:"张三"};
+        var obj2={age:12};
+        var obj3={say:function(){console.log("说话");}};
+        var obj=Object.assign(obj1,obj2,obj3);
+        console.log(obj.name,obj.age);
+        obj.say();
+
+        var newObj=Object.assign({},obj);
+        console.log(newObj.name,newObj.age);
+        newObj.say();
+
+        console.log(Object.is(obj.name,newObj.name));
+
+        function a(){
+        }
+        var b = new a();
+        console.log(a.prototype.isPrototypeOf(b)); 
+
+        Object.defineProperty(obj,'phonenum',{value:123456789})
+        console.log(obj.phonenum);
+
+        Object.defineProperties(obj, {
+            name: {
+                value: '李四',
+                configurable: false,
+                writable: true,
+                enumerable: true
+            },
+            age: {
+                value: 18,
+                configurable: true
+            }
+        })
+        console.log(obj.name, obj.age);
+        Object.freeze(obj)
+        obj.name='张三';
+        obj.sex='男';
+        console.log(obj.name,obj.sex);
+
+        for(var i in obj){
+            console.log(obj[i]);
+        }
+
+        var obj4 = {'a':'123','b':'345'};
+        console.log(Object.keys(obj4));  
+
+        var obj5 = { 100: "a", 2: "b", 7: "c"};
+        console.log(Object.keys(obj5)); 
+
+        var obj6 = Object.create({}, { getFoo : { value : function () { return this.foo } } });
+        obj6.foo = 1;
+        console.log(Object.keys(obj6)); 
+
+        console.log(Object.getOwnPropertyNames(obj));
+
+
+        function obj7(name,age,address){
+            var names=Symbol();
+            this[names]=name;
+            this.age=age;
+            this.address=address;
+        }
+        var zhangsan=new obj7("张三",12,"太原市");
+        console.log(Object.getOwnPropertySymbols(obj7));
+        console.log(Reflect.ownKeys(obj));
+        console.log(Object.values(obj));
+    </script>
+</body>
+</html>

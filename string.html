@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str="hello world";
+        console.log(str.length);
+
+        console.log(str.charAt(3));
+
+        console.log(str.charCodeAt(5));
+
+        console.log(String.fromCharCode(65));
+
+        console.log(str.indexOf('o'));
+
+        console.log(str.lastIndexOf('o'));
+        
+        console.log(str.replace("ll","ii"));
+
+        console.log(str.slice(0,-1));
+
+        console.log(str.substr(0,5));
+
+        console.log(str.split('o'));
+
+        str=" Hello World ";
+        console.log(str.toLowerCase(str));
+
+        console.log(str.toUpperCase(str));
+
+        console.log(str.trim(str));
+
+        console.log(str.match("o"));
+
+        console.log(str.concat("love"));
+
+        console.log(str.padStart(20,"love"))
+        console.log(str.padEnd(24,"you"))
+
+        var time = new Date();
+        var h = String(time.getHours()).padStart(2,'0')
+        var m = String(time.getMinutes()).padStart(2,'0')
+        var s = String(time.getSeconds()).padStart(2,'0')
+        console.log(`${h}:${m}:${s}`)
+
+    </script>
+</body>
+</html>
